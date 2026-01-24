@@ -4,6 +4,21 @@
 
 This repository holds a movie recommendation web application, which is meant to consolidate all my learnings in the ProDev Frontend Engineering program.
 
+### Project
+- Movie Recommendation App
+
+### Project Goals
+- Dynamic Routing; for detailed Movie Pages
+- User Personalization; enable users to save their favorite movies locally or via an API
+- Interactive Dashboard; build a resposive and visually appealing movie dashboard for browsing and recommendations
+
+### Key Features
+- API Integration
+- Dynamic Routing
+- Save Favorite Movies
+- Responsive and Interactive UI
+
+
 ---
 
 ### About the ProDev Frontend Engineering Program:
