@@ -3,10 +3,10 @@ import Image from "next/image";
 import React from "react";
 
 const MainMovieCard: React.FC<MovieCard> = ({
-  name,
+  id,
   title,
   poster_path,
-  description,
+   overview,
 }) => {
   return (
     <>
@@ -21,11 +21,12 @@ const MainMovieCard: React.FC<MovieCard> = ({
           />
         </div>
         <div>
-          <p>{description}</p>
+          <h2 className="text-xl font-semibold">{id}</h2>
+          <p>{overview}</p>
         </div>
       </div>
       <div>
-        <h2 className="text-2xl font-bold">{name}</h2>
+        <h2 className="text-2xl font-bold">{title}</h2>
       </div>
     </>
   );

@@ -1,10 +1,6 @@
-export interface MovieCard {
-    id: number;
-    name: string;
-    title: string;
-    poster_path: string | null;
-    description: string;
-}
+export type MovieCard = Pick<
+Movie,
+ "id" | "title" | "poster_path" | "overview">;
 
 export interface Genre {
     id: number;

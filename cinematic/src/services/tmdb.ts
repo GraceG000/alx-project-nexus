@@ -8,3 +8,5 @@ export const tmdbApi = axios.create({
     "Content-Type": "application/json;charset=utf-8",
   },
 });             
+console.log("BASE URL:", process.env.NEXT_PUBLIC_BASE_URL);
+console.log("TOKEN:", process.env.NEXT_PUBLIC_TMDB_API_READ_ACCESS_TOKEN);

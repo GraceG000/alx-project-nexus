@@ -1,3 +1,4 @@
+import { MovieListResponse } from "@/interfaces/movie";
 import { tmdbApi } from "@/services/tmdb";
 
 //get movie by id....
@@ -25,9 +26,10 @@ export async function getMovieImages(){
 }
 
 //get all trending movies (by day)...
-export async function getDailyTrendingMovies() {
+export async function getDailyTrendingMovies(): Promise<MovieListResponse> {
     try{
         const response = await tmdbApi.get("/trending/movie/day");
+        console.log("Trending Movies Response:", response.data);
         return response.data;
     }catch(error){
         console.error("Error fetching trending movies:", error);
