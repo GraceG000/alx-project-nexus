@@ -1,15 +1,16 @@
 import { MovieCard } from "@/interfaces/movie";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const MainMovieCard: React.FC<MovieCard> = ({
   id,
   title,
-  poster_path,
-   overview,
+  poster_path
 }) => {
   return (
     <>
+    <Link href={`/movies/${id}`}>
       <div>
         <div className="w-full">
           <Image
@@ -21,13 +22,10 @@ const MainMovieCard: React.FC<MovieCard> = ({
           />
         </div>
         <div>
-          <h2 className="text-xl font-semibold">{id}</h2>
-          <p>{overview}</p>
+          <h2 className="text-2xl font-bold">{title}</h2>
         </div>
       </div>
-      <div>
-        <h2 className="text-2xl font-bold">{title}</h2>
-      </div>
+     </Link> 
     </>
   );
 };

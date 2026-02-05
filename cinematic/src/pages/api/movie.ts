@@ -38,7 +38,7 @@ export async function getDailyTrendingMovies(): Promise<MovieListResponse> {
 }
 
 //get all trending movies (by week)...
-export async function getWeeklyTrendingMovies() {
+export async function getWeeklyTrendingMovies(): Promise<MovieListResponse> {
     try{
         const response = await tmdbApi.get("/trending/movie/week");
         return response.data;
