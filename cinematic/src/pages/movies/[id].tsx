@@ -29,6 +29,12 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, [id]);
 
+  useEffect(()=>{
+     const fetchMovieImage = () =>{
+      const imageData = get
+     }
+  }, [id])
+
   if (loading) return <div className="p-8">Loading...</div>;
   if (error) return <div className="p-8 text-red-500">{error}</div>;
   if (!movie) return <div className="p-8">Movie not found</div>;
@@ -41,7 +47,7 @@ const MovieDetails = () => {
       >
         Back
       </button>
-<div className="grid grid-rows-4">
+<div className="grid grid-rows-4 gap-2">
    <div>
         <Image
           src={
