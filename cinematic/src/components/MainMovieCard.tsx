@@ -18,7 +18,7 @@ const MainMovieCard: React.FC<MovieCard> = ({
             alt={`${title} Poster`}
             className="w-full h-auto rounded-lg"
             width={500}
-            height={750}
+            height={500}
           />
         </div>
         <div>
