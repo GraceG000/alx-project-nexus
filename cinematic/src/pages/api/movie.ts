@@ -1,5 +1,11 @@
 import { MovieListResponse, MovieImage, MovieKeywordItem } from "@/interfaces/movie";
 import { tmdbApi } from "@/services/tmdb";
+import { NextApiRequest, NextApiResponse } from 'next';
+
+// This default export is REQUIRED for API routes
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  res.status(200).json({ message: 'API endpoint' });
+}
 
 //get movie by id....
 export async function getMovieByID(id: number) {
