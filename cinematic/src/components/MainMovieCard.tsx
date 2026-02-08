@@ -17,8 +17,8 @@ const MainMovieCard: React.FC<MovieCard> = ({
             src={poster_path ? `${process.env.NEXT_PUBLIC_TMDB_IMAGE_URL}${poster_path}` : '/placeholder.png'}
             alt={`${title} Poster`}
             className="w-full h-auto rounded-lg"
-            width={500}
-            height={500}
+            width={300}
+            height={300}
           />
         </div>
         <div>

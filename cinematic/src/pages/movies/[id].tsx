@@ -14,6 +14,7 @@ import {
 import Image from 'next/image'
 import { SidebarToggle } from '@/components/ui/SidebarToggle'
 import { SidebarToggleDark } from '@/components/ui/SidebarToggleDark'
+import { FavoriteButton } from '@/components/FavoriteButton'
 
 const MovieDetails = () => {
   const router = useRouter()
@@ -203,11 +204,9 @@ const MovieDetails = () => {
               </div>
             </div>
 
-            <div className='mt-4 flex gap-2'>
+            <div className='mt-4 flex items-center gap-2'>
               <div>
-                <button className='bg-green-200 text-green-800 py-2 px-4 rounded-full cursor-pointer'>
-                Add to favorites
-              </button>
+                <FavoriteButton movie={movie} />
               </div>
               
               <div>

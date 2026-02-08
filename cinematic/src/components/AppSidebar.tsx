@@ -6,6 +6,7 @@ import {
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 
 const AppSidebar = () => {
@@ -15,9 +16,9 @@ return (
 
       <SidebarContent>
         <SidebarGroup>
-          <div>Dashboard</div>
-          <div>Movies</div>
-          <div>Favorites</div>
+          <Link href={`/dashboard`}><div>Dashboard</div> </Link>
+          <Link href={`/movies`}><div>Movies</div></Link>
+          <Link href={`/favourites`}><div>Favorites</div></Link>
         </SidebarGroup>
       </SidebarContent>
 
