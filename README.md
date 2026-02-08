@@ -75,7 +75,34 @@ This project was part of the **ProDev Frontend Engineering Program**, covering:
 - Prioritize performance and accessibility  
 - Document challenges and solutions early  
 
+
 ---
 
 ## 📁 Project Structure
+
+/src
+├─ components/ # UI components
+├─ pages/ # Next.js pages
+├─ styles/ # CSS/SCSS styles
+├─ utils/ # Helpers and API utilities
+├─ store/ # Redux or context state
+
+
+---
+
+## 🧩 Getting Started
+
+**Clone the repository**
+
+```bash
+git clone https://github.com/GraceG000/alx-project-nexus.git
+Install dependencies
+
+npm install
+Start the development server
+
+npm run dev
+Open your browser and visit:
+
+http://localhost:3000
 
