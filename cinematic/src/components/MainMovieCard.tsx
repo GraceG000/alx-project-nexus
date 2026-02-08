@@ -22,7 +22,7 @@ const MainMovieCard: React.FC<MovieCard> = ({
           />
         </div>
         <div>
-          <h2 className="text-2xl font-bold">{title}</h2>
+          <h2 className="text-lg font-semibold text-center">{title}</h2>
         </div>
       </div>
      </Link> 

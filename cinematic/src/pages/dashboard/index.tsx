@@ -3,6 +3,7 @@ import { MovieCard } from '@/interfaces/movie'
 import { getDailyTrendingMovies } from '@/pages/api/movie'
 import MainMovieCard from '@/components/MainMovieCard'
 import FeatureMovie from '@/components/FeatureMovie'
+import { SidebarToggle } from '@/components/ui/SidebarToggle'
 
 const Dashboard = () => {
   const [movies, setMovies] = useState<MovieCard[]>([])
@@ -43,29 +44,28 @@ const Dashboard = () => {
     {/* Background / Hero Section */}
     <div
       className="
-        h-[500px]
+        h-[300px]
         bg-[url('/black-and-blue.webp')]
         bg-cover
         bg-center
         bg-no-repeat
         relative
+        flex justify-center items-center
       "
     >
-      <div className="absolute inset-0  z-10" />
+     <div className='absolute top-5 left-5'>
+      <SidebarToggle/>
+      </div> 
+    <div className=''>
+    <input className='bg-white rounded-full px-4 py-2 border-none' placeholder='find your movies...'/>
+    </div>  
+    
+      
 
-      {/* <div className="relative p-8 h-full flex items-end">
-        {movies.length > 0 && (
-          <FeatureMovie
-            id={movies[0].id}
-            title={movies[0].title}
-            poster_path={movies[0].poster_path}
-            overview={movies[0].overview}
-          />
-        )}
-      </div> */}
+    </div>
 
-       {/* Movies Grid */}
-    <div className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+   {/* Movies Grid */}
+    <div className="mt-4 px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {movies.map(movie => (
         <MainMovieCard
           key={movie.id}
@@ -76,10 +76,6 @@ const Dashboard = () => {
         />
       ))}
     </div>
-
-    </div>
-
-  
   </div>
 )
 

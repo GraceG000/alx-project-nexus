@@ -14,8 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <AppSidebar />
 
       {/* Main content */}
-      <main className=""> {/* optional, add left margin to not overlap the sidebar */}
-      <TopNav />
+      <main className="w-full"> {/* optional, add left margin to not overlap the sidebar */}
         <Component {...pageProps} />
       </main>
     </SidebarProvider>

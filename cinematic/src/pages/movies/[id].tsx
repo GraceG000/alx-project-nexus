@@ -12,6 +12,8 @@ import {
   getMovieKeywords
 } from '@/pages/api/movie'
 import Image from 'next/image'
+import { SidebarToggle } from '@/components/ui/SidebarToggle'
+import { SidebarToggleDark } from '@/components/ui/SidebarToggleDark'
 
 const MovieDetails = () => {
   const router = useRouter()
@@ -88,6 +90,10 @@ const MovieDetails = () => {
 
   return (
     <>
+    <div className='ml-4 mt-4'>
+         <SidebarToggleDark/>
+    </div>
+ 
       <div className='grid grid-rows-[1fr_2fr] gap-4 md:grid-rows-[1fr_2fr] md:gap-4 lg:grid-rows-[95vh_1fr] lg:gap-4 py-8 px-8'>
         {/*Image and genral information section...*/}
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[400_1fr]'>
@@ -106,8 +112,9 @@ const MovieDetails = () => {
             />
           </div>
           <div className='h-full'>
+
             {/*Overview...*/}
-            <div>
+            <div className='px-4'>
               <h3 className='font-bold mb-2'>Overview</h3>
               {movie.overview}
             </div>
@@ -196,10 +203,20 @@ const MovieDetails = () => {
               </div>
             </div>
 
-            <div className='mt-4'>
-              <button className='bg-green-200 text-green-800 py-2 px-4 rounded-full cursor-pointer'>
+            <div className='mt-4 flex gap-2'>
+              <div>
+                <button className='bg-green-200 text-green-800 py-2 px-4 rounded-full cursor-pointer'>
                 Add to favorites
               </button>
+              </div>
+              
+              <div>
+                   <button onClick={() => router.back()} className='bg-gray-400 text-white py-2 px-4 rounded-full cursor-pointer'>
+                Back
+              </button>
+              </div>
+
+              
             </div>
           </div>
         </div>

@@ -1,12 +1,12 @@
 "use client";
 import { useSidebar } from "@/components/ui/sidebar";
 
-export function SidebarToggle() {
+export function SidebarToggleDark() {
   const { toggleSidebar, open } = useSidebar();
   
   return (
     <div 
-      className={`btn btn-circle swap swap-rotate text-white ${open ? 'swap-active' : ''}`}
+      className={`btn btn-circle swap swap-rotate text-black ${open ? 'swap-active' : ''}`}
       onClick={toggleSidebar}
     >
       {/* hamburger icon (shows when CLOSED) */}
