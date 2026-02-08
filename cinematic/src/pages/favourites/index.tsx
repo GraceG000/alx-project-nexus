@@ -4,9 +4,16 @@ import { useFavorites } from '@/hooks/useFavorites'
 import { FavoriteButton } from '@/components/FavoriteButton'
 import { SidebarToggle } from '@/components/ui/SidebarToggle'
 import  MainMovieCard  from '@/components/MainMovieCard'
+import { useState } from 'react'
 
 const Favourites = () => {
   const { favorites } = useFavorites()
+  const [searchQuery, setSearchQuery] = useState('')
+
+  // Filter favorites based on search query
+  const filteredFavorites = favorites.filter(movie =>
+    movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+  )
 
   if (favorites.length === 0) {
     return (
@@ -30,6 +37,8 @@ const Favourites = () => {
             <input
               className='bg-white rounded-full px-4 py-2 border-none'
               placeholder='find your movies...'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
         </div>
@@ -65,21 +74,37 @@ const Favourites = () => {
           <input
             className='bg-white rounded-full px-4 py-2 border-none'
             placeholder='find your movies...'
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
       </div>
 
-      <div className='px-4 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-        {favorites.map(movie => (
-        <MainMovieCard
-          key={movie.id}
-          id={movie.id}
-          title={movie.title}
-          poster_path={movie.poster_path}
-          overview={movie.overview}
-        />
-        ))}
-      </div>
+      {/* Results Count */}
+      {searchQuery && (
+        <p className='text-sm text-gray-500 mt-4 px-4'>
+          Showing {filteredFavorites.length} of {favorites.length} favorites
+        </p>
+      )}
+
+      {/* Movies Grid */}
+      {filteredFavorites.length > 0 ? (
+        <div className='px-4 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          {filteredFavorites.map(movie => (
+            <MainMovieCard
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              poster_path={movie.poster_path}
+              overview={movie.overview}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className='text-center text-gray-500 py-8'>
+          <p>No favorites found for "{searchQuery}"</p>
+        </div>
+      )}
     </div>
   )
 }

@@ -58,3 +58,5 @@ export async function getWeeklyTrendingMovies(): Promise<MovieListResponse> {
         throw error;
     }
 }
+
+
