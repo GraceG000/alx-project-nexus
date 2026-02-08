@@ -39,43 +39,50 @@ const Dashboard = () => {
   if (loading) return <p>Loading...</p>
 
   return (
-    <div className='p-8'>
-      <div>
-        {movies.length === 0 ? (
-          <p>No movies returned</p>
-        ) : (
-          <>
-            <div className='grid grid-rows-[50rem_1fr] gap-6'>
-              {/* Featured movie */}
-              <div className='h-full'>
-                {movies.length > 0 && (
-                  <FeatureMovie
-                    id={movies[0].id}
-                    title={movies[0].title}
-                    poster_path={movies[0].poster_path}
-                    overview={movies[0].overview}
-                  />
-                )}
-              </div>
+  <div>
+    {/* Background / Hero Section */}
+    <div
+      className="
+        h-[500px]
+        bg-[url('/black-and-blue.webp')]
+        bg-cover
+        bg-center
+        bg-no-repeat
+        relative
+      "
+    >
+      <div className="absolute inset-0  z-10" />
 
-              {/* Rest of movies */}
-              <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-                {movies.slice(1).map(movie => (
-                  <MainMovieCard
-                    key={movie.id}
-                    id={movie.id}
-                    title={movie.title}
-                    poster_path={movie.poster_path}
-                    overview={movie.overview}
-                  />
-                ))}
-              </div>
-            </div>
-          </>
+      {/* <div className="relative p-8 h-full flex items-end">
+        {movies.length > 0 && (
+          <FeatureMovie
+            id={movies[0].id}
+            title={movies[0].title}
+            poster_path={movies[0].poster_path}
+            overview={movies[0].overview}
+          />
         )}
-      </div>
+      </div> */}
+
+       {/* Movies Grid */}
+    <div className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {movies.map(movie => (
+        <MainMovieCard
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          poster_path={movie.poster_path}
+          overview={movie.overview}
+        />
+      ))}
     </div>
-  )
+
+    </div>
+
+  
+  </div>
+)
+
 }
 
 export default Dashboard
