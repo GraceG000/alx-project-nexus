@@ -60,8 +60,34 @@ export interface MovieListResponse {
     total_results: number;
 }
 
+// interfaces/movieImages.ts
 
+export interface MovieImageItem {
+  aspect_ratio: number
+  height: number
+  iso_639_1: string | null
+  file_path: string
+  vote_average: number
+  vote_count: number
+  width: number
+}
 
+export interface MovieImage {
+  id: number
+  backdrops: MovieImageItem[]
+  logos: MovieImageItem[]
+  posters: MovieImageItem[]
+}
+
+export interface KeyWords{
+  id: string
+  name: string
+}
+
+export interface MovieKeywordItem{
+    id: string
+    keywords: KeyWords[]
+}
 
 
 
