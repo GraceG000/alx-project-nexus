@@ -55,18 +55,20 @@ const Dashboard = () => {
           bg-center
           bg-no-repeat
           relative
-          flex justify-center items-center
+          flex flex-col justify-center items-center
         "
       >
         <div className='absolute top-5 left-5'>
           <SidebarToggle/>
         </div> 
+
+        <h1 className='text-white text-[3rem]'>Dashboard</h1>
         
         <div className="w-full max-w-md px-4">
           <input
             type="text"
             placeholder="Search movies..."
-            className="input input-bordered w-full bg-white py-4 px-8 rounded-full"
+            className="input input-bordered w-full bg-white py-2 px-8 rounded-full"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />

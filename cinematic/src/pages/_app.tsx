@@ -8,7 +8,7 @@ import TopNav from "@/components/TopNav";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       
       {/* Sidebar will be rendered on every page */}
       <AppSidebar />

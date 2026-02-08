@@ -115,7 +115,7 @@ const MovieDetails = () => {
           <div className='h-full'>
 
             {/*Overview...*/}
-            <div className='px-4'>
+            <div className=''>
               <h3 className='font-bold mb-2'>Overview</h3>
               {movie.overview}
             </div>

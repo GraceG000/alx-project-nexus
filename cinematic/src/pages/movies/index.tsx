@@ -64,19 +64,21 @@ const Movies = () => {
           bg-center
           bg-no-repeat
           relative
-          flex flex-row justify-center items-center gap-4
+          flex flex-col justify-center items-center gap-4
         "
       >
         <div className='absolute top-5 left-5'>
           <SidebarToggle />
         </div>
 
+        <h1 className='text-white text-[3rem]'>Movies</h1>
+       
         {/* Search Input */}
         <div className='w-full max-w-md px-4'>
           <input
             type='text'
             placeholder='Search movies...'
-            className='input input-bordered w-full bg-white rounded-full py-4 px-8'
+            className='input input-bordered w-full bg-white rounded-full py-2 px-8'
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
           />

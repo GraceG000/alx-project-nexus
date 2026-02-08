@@ -64,18 +64,22 @@ const Favourites = () => {
                 bg-center
                 bg-no-repeat
                 relative
-                flex justify-center items-center
+                flex flex-col justify-center items-center
               "
       >
         <div className='absolute top-5 left-5'>
           <SidebarToggle />
         </div>
-        <div className=''>
+        <h1 className='text-white text-[3rem]'>Favourites</h1>
+       
+        {/* Search Input */}
+        <div className='w-full max-w-md px-4'>
           <input
-            className='bg-white rounded-full px-4 py-2 border-none'
-            placeholder='find your movies...'
+            type='text'
+            placeholder='Search movies...'
+            className='input input-bordered w-full bg-white rounded-full py-2 px-8'
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={e => setSearchQuery(e.target.value)}
           />
         </div>
       </div>
